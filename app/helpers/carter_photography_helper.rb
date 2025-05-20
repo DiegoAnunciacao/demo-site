@@ -1,0 +1,2 @@
+module CarterPhotographyHelper
+end

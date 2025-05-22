@@ -1,0 +1,4 @@
+<div class="container mx-auto">
+  <h1 class="text-5xl"><%= @gallery.title %></h1>
+  <%= link_to "Delete", gallery_path(@gallery), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</div>

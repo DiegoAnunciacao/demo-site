@@ -12,5 +12,11 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  root "carter_photography#home"
+  root "galleries#index"
+  get "galleries/new", to: "galleries#new", as: :new_gallery
+  post "galleries", to: "galleries#create"
+  get "galleries/:id", to: "galleries#show", as: :gallery
+  get "galleries/:id/edit", to: "galleries#edit"
+  patch "galleries/:id", to: "galleries#update"
+  delete "galleries/:id", to: "galleries#destroy"
 end

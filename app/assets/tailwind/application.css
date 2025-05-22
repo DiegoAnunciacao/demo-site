@@ -1,1 +1,23 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+@theme {
+  --font-playfair: "Playfair Display", "serif";
+  --font-lato: "Lato", "sans-serif";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair);
+}
+
+.title {
+  @apply text-center text-2xl font-bold md:text-4xl mt-6
+}
+
+.label_field {
+  @apply appearance-none rounded-none relative block w-full px-3 py-2 border
+        border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md
+        focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
+        focus:z-10 sm:text-sm
+}

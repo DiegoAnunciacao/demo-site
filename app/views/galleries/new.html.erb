@@ -1,0 +1,12 @@
+<div class="container mx-auto">
+  <h1 class="text-4xl">New Gallery</h1>
+  <%= form_with model: @gallery, local: true do |f| %>
+    <div class="mb-4">
+      <%= f.label :title, class: "block font-bold text-lg mb-1" %>
+      <%= f.text_field :title, class: "border rounded-md w-full px-3 py-2" %>
+    </div>
+
+    <%= f.submit "Save", class: "py-2 px-4 rounded bg-indigo-500 text-white cursor-pointer hover:bg-indigo-700" %>
+
+  <% end %>
+</div>

@@ -1,4 +1,13 @@
 <div class="container mx-auto">
-  <h1 class="text-5xl"><%= @gallery.title %></h1>
-  <%= link_to "Delete", gallery_path(@gallery), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <% if @gallery.images.attached?  %>
+    <h1 class="text-5xl mb-5"><%= @gallery.title %></h1>
+    <% @gallery.images.each do |image| %>
+      <%= image_tag image, class: "h-100" %>
+    <% end %>
+    <div class="mt-6">
+      <%= link_to "Delete", gallery_path(@gallery), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "border bg-red-500 py-2 px-6 text-white hover:bg-red-700 rounded-xl" %>
+      <%= link_to "Home", root_path, class: "border bg-blue-500 py-2 px-6 text-white hover:bg-blue-700 rounded-xl" %>
+  <% end %>
+</div>
+
 </div>

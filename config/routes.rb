@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get "carter_photography/home"
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -13,10 +12,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "galleries#index"
-  get "galleries/new", to: "galleries#new", as: :new_gallery
-  post "galleries", to: "galleries#create"
-  get "galleries/:id", to: "galleries#show", as: :gallery
-  get "galleries/:id/edit", to: "galleries#edit"
-  patch "galleries/:id", to: "galleries#update"
-  delete "galleries/:id", to: "galleries#destroy"
+
+
+  resources :products, only: [ :index, :new, :edit, :update, :destroy ]
+  resources :galleries, only: [ :new, :edit, :update, :show, :destroy ]
 end

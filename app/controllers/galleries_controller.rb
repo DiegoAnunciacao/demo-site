@@ -1,10 +1,10 @@
 class GalleriesController < ApplicationController
+  before_action :set_gallery, only: [ :edit, :update, :show, :destroy ]
   def index
     @galleries= Gallery.all
   end
 
   def show
-    @gallery = Gallery.find(params[:id])
   end
 
   def new
@@ -16,18 +16,16 @@ class GalleriesController < ApplicationController
     @gallery.user = current_user
 
     if @gallery.save
-      redirect_to gallery_path(@gallery), notice: "Galeria criada com sucesso!"
+      redirect_to gallery_path(@gallery), notice: "Gallery successful created"
     else
       render :new, status: :unprocessable_entity # importante para mostrar os erros
     end
   end
 
   def edit
-    @gallery = Gallery.find(params[:id])
   end
 
   def update
-    @gallery = Gallery.find(params[:id])
     if @gallery.update(galleries_params)
       redirect_to gallery_path(@gallery), notice: "Client successful updated"
     else
@@ -36,15 +34,17 @@ class GalleriesController < ApplicationController
   end
 
   def destroy
-    @gallery = Gallery.find(params[:id])
     @gallery.destroy
-
-    redirect_to root_path, notice: "Client successful deleted"
+    redirect_to root_path, notice: "Gallery destroyed"
   end
 
   private
 
   def galleries_params
-    params.require(:gallery).permit(:title)
+    params.require(:gallery).permit(:title, images: [])
+  end
+
+  def set_gallery
+    @gallery = Gallery.find(params[:id])
   end
 end

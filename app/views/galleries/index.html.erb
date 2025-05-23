@@ -1,7 +1,18 @@
-<div class="container mx-auto">
-  <ul>
-    <% @galleries.each_with_index do |gallery, index| %>
-      <li class="text-4xl font-bold"><%= "#{index + 1} - #{gallery.title}"  %></li>
+<div class="container mx-auto max-w-screen">
+  <div class="grid grid-cols md:grid-cols-4 gap-4 items-centerbin">
+    <% @galleries.each do |gallery| %>
+      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+          <div>
+            <% if gallery.images.any? %>
+              <%= link_to gallery_path(gallery)  do %>
+                <%= image_tag gallery.images.first, class: "rounded-t-lg" %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="p-5">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><%= gallery.title %></h5>
+          </div>
+      </div>
     <% end %>
-  </ul>
+  </div>
 </div>

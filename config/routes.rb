@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "stimulus/navbar"
   get "pages/about"
   get "pages/portfolio"
   get "pages/product"

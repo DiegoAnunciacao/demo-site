@@ -4,15 +4,56 @@
 @theme {
   --font-playfair: "Playfair Display", "serif";
   --font-lato: "Lato", "sans-serif";
+  --breakpoint-*: initial;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --color-gold-light: #dbcaa3;
+  --color-gold-default: #d1bb87;
+  --color-gold-dark: #c4a96a;
+  --color-sand: #fcf9f5;
+  --color-sand-light: #f5f0e8;
+  --color-sand-dark: #e6d9c8;
+  --color-default: #FBFAF9;
+  --container-main: 86rem;
+  --foreground: hsl(27, 4%, 43%);
 }
 
+root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-playfair);
 }
 
-.title {
-  @apply text-center text-2xl font-bold md:text-4xl mt-6
+.title{
+  @apply text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6
+}
+
+.subtitle {
+  @apply text-2xl md:text-3xl
+}
+
+.container {
+  max-width: var(--container-main);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.text-foreground {
+  color: var(--foreground);
+}
+
+.active {
+  color: var(--color-gold-dark);
 }
 
 .label_field {
@@ -26,12 +67,16 @@ h1, h2, h3, h4, h5, h6 {
   @apply bg-white rounded-lg p-6 shadow-xl
 }
 
-.btn-primary{
+/* .btn-primary{
   @apply cursor-pointer bg-blue-500 hover:bg-blue-600 text-white text-[16px]
   text-center px-3 py-1.5 rounded-sm inline-block
-}
+} */
 
-.btn-danger{
+.btn-gold {
+    @apply bg-gold-default hover:bg-gold-dark font-medium cursor-pointer text-white px-6 py-3 mx-2 rounded-lg
+  }
+
+/* .btn-danger{
   @apply cursor-pointer bg-red-500 hover:bg-red-600 text-white text-[16px]
   text-center px-3 py-1.5 rounded-sm inline-block
-}
+} */

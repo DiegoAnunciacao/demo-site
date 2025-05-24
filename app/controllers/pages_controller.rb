@@ -1,8 +1,12 @@
 class PagesController < ApplicationController
   def home
+    @icons = StaticContent::HomeIcons.all
+    @covers = StaticContent::HomeCovers.all
   end
 
   def about
+    @experiences = StaticContent::AboutExperiences.all
+    @notes = StaticContent::AboutNotes.all
   end
 
   def portfolio

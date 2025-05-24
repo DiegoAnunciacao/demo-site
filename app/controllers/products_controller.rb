@@ -1,8 +1,10 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [ :edit, :update, :destroy ]
+  before_action :set_product, only: [ :edit, :show, :update, :destroy ]
 
   def index
     @products = Product.all
+  end
+  def show
   end
 
   def new
@@ -16,7 +18,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to product_path(@product), notice: "Product successful created"
     else
-      rend :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +29,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to product_path(@product), notice: "Product successful updated"
     else
-      rend :update, status: :unprocessable_entity
+      render :update, status: :unprocessable_entity
     end
   end
 
@@ -43,6 +45,6 @@ class ProductsController < ApplicationController
   end
 
   def set_product
-    @product = Product.find(params(:id))
+    @product = Product.find(params[:id])
   end
 end

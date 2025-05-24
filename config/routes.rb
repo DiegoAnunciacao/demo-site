@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "galleries#index"
 
-
-  resources :products, only: [ :index, :new, :edit, :update, :destroy ]
-  resources :galleries, only: [ :new, :edit, :update, :show, :destroy ]
+  resources :products
+  resources :galleries
 end

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get "pages/about"
+  get "pages/portfolio"
+  get "pages/product"
+  get "pages/contact"
+  devise_for :users, skip: [ :registrations ]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -11,8 +15,13 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  root "galleries#index"
+  root "pages#home"
+  resources :products, only: [ :index, :show ]
+  resources :galleries, only: [ :index, :show ]
 
-  resources :products
-  resources :galleries
+  namespace :admin do
+    root "admin#workflow"
+    resources :galleries, except: [ :show ]
+    resources :products, except: [ :show ]
+  end
 end

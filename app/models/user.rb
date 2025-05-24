@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :galleries
   has_many :products
+
+  def is_admin?
+    is_admin
+  end
 end

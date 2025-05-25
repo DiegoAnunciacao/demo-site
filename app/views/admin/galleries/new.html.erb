@@ -1,1 +1,14 @@
-<h1>AQUI VAAMOS CRIAR UMA GALERIA</h1>
+<div class="container mx-auto">
+  <h1 class="text-4xl text-center">New Product</h1>
+  <div class="flex justify-center items-center">
+    <%= form_with model: [ :admin, @gallery ], local: true, html: { multipart: true } do |f| %>
+      <div class="mb-4">
+        <%= f.label :title, class: "block font-bold text-lg mb-1" %>
+        <%= f.text_field :title, class: "border rounded-md px-3 py-2 w-full" %>
+        <%= f.label :images, "Select Your Image", class: "block font-bold text-lg mb-1" %>
+        <%= f.file_field :images, multiple: true, class: "py-2 px-4 rounded bg-green-500 text-white cursor-pointer hover:bg-green-700 mt-4 text-center" %>
+        <%= f.submit "Create", class: "py-2 px-4 rounded bg-indigo-500 text-white cursor-pointer hover:bg-indigo-700 mt-4" %>
+      </div>
+    <% end %>
+  </div>
+</div>

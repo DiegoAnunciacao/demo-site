@@ -7,8 +7,8 @@
       <%= link_to "Home", root_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(root_path)}" %>
       <%= link_to "About", pages_about_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_about_path)}" %>
       <%= link_to "Portfolio", pages_portfolio_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_portfolio_path)}" %>
-      <a href="" class="hover:text-gold-dark transition-colors duration-300">Products</a>
-      <a href="" class="hover:text-gold-dark transition-colors duration-300">Contact</a>
+      <%= link_to "Products", pages_products_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_products_path)}" %>
+      <%= link_to "Contact", pages_contact_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_contact_path)}" %>
     </div>
     <button data-action="click->navbar#toggle" class="md:hidden focus:outline-none">
       <svg data-navbar-target="openIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -25,8 +25,8 @@
       <%= link_to "Home", root_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(root_path)}" %>
       <%= link_to "About", pages_about_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_about_path)}" %>
       <%= link_to "Portfolio", pages_portfolio_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_portfolio_path)}" %>
-      <a href="" class="hover:text-gold-dark transition-colors duration-300">Products</a>
-      <a href="" class="hover:text-gold-dark transition-colors duration-300">Contact</a>
+      <%= link_to "Products", pages_products_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_products_path)}" %>
+      <%= link_to "Contact", pages_contact_path, class: "hover:text-gold-dark transition-colors duration-300 #{'active' if current_page?(pages_contact_path)}" %>
     </div>
   </div>
 </nav>

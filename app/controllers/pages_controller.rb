@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     @galleries = Gallery.all
   end
 
-  def product
+  def products
     @products = Product.all
   end
 

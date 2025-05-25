@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .title{
-  @apply text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6
+  @apply text-center text-3xl md:text-5xl
 }
 
 .subtitle {
@@ -73,10 +73,14 @@ h1, h2, h3, h4, h5, h6 {
 } */
 
 .btn-gold {
-    @apply bg-gold-default hover:bg-gold-dark font-medium cursor-pointer text-white px-6 py-3 mx-2 rounded-lg
+    @apply bg-gold-default hover:bg-gold-dark font-medium cursor-pointer text-white px-6 py-3 mx-2 rounded-lg inline-flex
   }
 
 /* .btn-danger{
   @apply cursor-pointer bg-red-500 hover:bg-red-600 text-white text-[16px]
   text-center px-3 py-1.5 rounded-sm inline-block
 } */
+
+.gallery-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6
+}

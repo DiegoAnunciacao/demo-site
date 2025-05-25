@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get "stimulus/navbar"
   get "pages/about"
   get "pages/portfolio"
-  get "pages/product"
+  get "pages/products"
   get "pages/contact"
   devise_for :users, skip: [ :registrations ]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -17,8 +16,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#home"
-  resources :products, only: [ :index, :show ]
-  resources :galleries, only: [ :index, :show ]
+  resources :products, only: [ :show ]
+  resources :galleries, only: [ :show ]
 
   namespace :admin do
     root "admin#workflow"

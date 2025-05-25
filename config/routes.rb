@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :galleries, only: [ :show ]
 
   namespace :admin do
-    root "admin#workflow"
+    root "dashboard#index"
     resources :galleries, except: [ :show ]
     resources :products, except: [ :show ]
   end

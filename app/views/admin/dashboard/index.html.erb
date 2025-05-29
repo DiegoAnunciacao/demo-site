@@ -1,3 +1,19 @@
-<section class="container max-w-full h-screen">
+<section class="container max-w-full h-screen py-24">
+  <div class="flex items-center justify-center gap-15 text-">
+    <div class="px-6">
+      <h1 class="text-3xl mb-6">Galleries</h1>
+      <div class="">
+        <% @galleries.each do |gallery| %>
+          <p class="mt-2"><%= gallery.title %></p>
+          <%= link_to "Delete", admin_gallery_path(gallery), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-gold my-2" %>
+        <% end %>
+      </div>
+    </div>
 
+    <div class="px-6">
+      <div>
+      <h1 class="text-3xl mb-6">Products</h1>
+      </div>
+    </div>
+  </div>
 </section>

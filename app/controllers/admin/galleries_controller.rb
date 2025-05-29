@@ -1,7 +1,8 @@
 class Admin::GalleriesController < Admin::ApplicationController
-  before_action :set_gallery, only: [ :edit, :update, :destroy ]
-  def index
-    @galleries= Gallery.all
+  before_action :set_gallery, only: [ :edit, :update, :destroy, :show ]
+
+  def show
+
   end
   def new
     @gallery = Gallery.new
@@ -23,7 +24,7 @@ class Admin::GalleriesController < Admin::ApplicationController
 
   def update
     if @gallery.update(galleries_params)
-      redirect_to gallery_path(@gallery), notice: "Client successful updated"
+      redirect_to gallery_path(@gallery), status: :see_other, notice: "Client successful updated"
     else
       render :edit, status: :unprocessable_entity # importante para mostrar os erros
     end
@@ -31,7 +32,7 @@ class Admin::GalleriesController < Admin::ApplicationController
 
   def destroy
     @gallery.destroy
-    redirect_to root_path, notice: "Gallery destroyed"
+    redirect_to admin_root_path, notice: "Gallery destroyed"
   end
 
   private

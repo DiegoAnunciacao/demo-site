@@ -1,9 +1,6 @@
 class Admin::ProductsController < Admin::ApplicationController
   before_action :set_product, only: [ :edit, :show, :update, :destroy ]
 
-  def index
-    @products = Product.all
-  end
   def show
   end
 

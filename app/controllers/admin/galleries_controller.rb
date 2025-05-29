@@ -37,7 +37,7 @@ class Admin::GalleriesController < Admin::ApplicationController
   private
 
   def galleries_params
-    params.require(:gallery).permit(:title, images: [])
+    params.require(:gallery).permit(:title, :cover_img, gallery_img: [])
   end
 
   def set_gallery

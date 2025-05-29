@@ -1,4 +1,5 @@
 class Admin::ApplicationController < ActionController::Base
+  layout "application"
   before_action :authenticate_user!
   before_action :ensure_admin!
 

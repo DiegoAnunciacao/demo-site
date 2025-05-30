@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "dashboard#index"
-    resources :galleries, except: [ :show ]
-    resources :products, except: [ :show ]
+    resources :galleries, except: [ :show, :index ]
+    resources :products, except: [ :show, :index ]
   end
 end

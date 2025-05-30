@@ -13,7 +13,7 @@ class Admin::ProductsController < Admin::ApplicationController
     @product.user = current_user
 
     if @product.save
-      redirect_to product_path(@product), notice: "Product successful created"
+      redirect_to admin_root_path(@product), notice: "Product successful created"
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,7 +24,7 @@ class Admin::ProductsController < Admin::ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to product_path(@product), notice: "Product successful updated"
+      redirect_to admin_root_path(@product), notice: "Product successful updated"
     else
       render :update, status: :unprocessable_entity
     end
@@ -32,7 +32,7 @@ class Admin::ProductsController < Admin::ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to products_path, notice: "Product destroyed"
+    redirect_to admin_root_path, notice: "Product destroyed"
   end
 
   private

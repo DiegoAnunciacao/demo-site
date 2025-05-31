@@ -1,3 +1,0 @@
-"scripts": {
-  "build": "tailwindcss -c ./tailwind.config.js -o ./app/assets/builds/application.css --minify"
-}

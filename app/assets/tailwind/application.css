@@ -56,13 +56,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-gold-dark);
 }
 
-/* .label_field {
-  @apply appearance-none rounded-none relative block w-full px-3 py-2 border
-        border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md
-        focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
-        focus:z-10 sm:text-sm
-} */
-
 .card {
   @apply bg-white rounded-lg p-6 shadow-xl
 }
@@ -86,5 +79,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gallery-grid {
-  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6
+  @apply grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6
 }

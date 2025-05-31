@@ -1,0 +1,82 @@
+<div class="pt-24 md:pt-28 lg:pt-32 bg-default">
+  <div class="container mx-auto py-20 px-8">
+    <div class="space-y-3 mb-16">
+      <h1 class="title">Get in Touch</h1>
+      <p class="text-foreground text-center">I would love to hear about your wedding plans and discuss how I can help capture your special day.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="md:col-span-2">
+        <div class="bg-white rounded-lg shadow-sm p-6 md:p-8">
+          <%= form_with url: contacts_path, method: :post, class: "space-y-6" do %>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="name" class="block text-sm font-medium">Name *</label>
+                <input type="text" name="contact[name]" id="name" class="w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark">
+              </div>
+              <div class="space-y-2">
+                <label for="email" class="block text-sm font-medium">Email *</label>
+                <input type="email" name="contact[email]"  id="email" class="w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark">
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="date" class="block text-sm font-medium">Wedding Date</label>
+                <input type="date" name="contact[date]"  id="date" class="w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark">
+              </div>
+              <div class="space-y-2">
+                <label for="location" class="block text-sm font-medium">Location</label>
+                <input type="text" name="contact[location]"  id="location" placeholder="e.g., Dublin, Ireland" class="w-full p-3 border border-sand-dark rounded-md focus:outline-gold-dark">
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label for="message" class="block text-sm font-medium">Message *</label>
+              <textarea name="contact[message]"  id="message" placeholder="Tell me About your wedding plans..." class="w-full p-3 h-40 border border-sand-dark rounded-md focus:outline-gold-dark"></textarea>
+            </div>
+            <button class="btn-gold mt-6">Send Message</button>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <div class="bg-sand rounded-lg p-6">
+          <h2 class="text-xl mb-4">Contact Information</h2>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div>svg </div>
+              <div>
+                <p class="font-medium">Email</p>
+                <%= link_to "carterfotografia@gmail.com", root_path, class: "text-[color:var(--foreground)] hover:text-[color:var(--color-gold-dark)] transition-colors duration-300" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div>svg </div>
+            <div>
+              <p class="font-medium">Phone</p>
+              <a href="https://wa.me/353892338481?text=Hi,%20I'd%20like%20more%20information." class="text-[color:var(--foreground)] hover:text-[color:var(--color-gold-dark)] transition-colors duration-300">+353 89 233 8481</a>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div>svg </div>
+            <div>
+              <p class="font-medium">Based in</p>
+              <p class="text-[color:var(--foreground)]">Dublin, Ireland<br> Available for travel throughout Europe</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-sand rounded-lg p-6 my-6">
+          <h2 class="text-xl mb-2">Connect on Social Media</h2>
+        </div>
+
+        <div class="bg-sand-light rounded-lg p-6">
+          <h2 class="text-xl mb-2">Response Time</h2>
+          <p class="font-medium">I typically respond to all inquiries within 24-48 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

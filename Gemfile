@@ -67,3 +67,7 @@ group :test do
 end
 
 gem "tailwindcss-ruby", "~> 4.1"
+
+gem "dockerfile-rails", ">= 1.7", group: :development
+
+gem "aws-sdk-s3", "~> 1.188", require: false

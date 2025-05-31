@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
   def create
     ContactMailer.contact_email(contact_params).deliver_now
-    redirect_to pages_contact_path, notice: "Message Successful sent"
+    redirect_to pages_root_path, notice: "Message Successful sent"
   end
 
   private

@@ -26,7 +26,7 @@ gem "jbuilder"
 # devise
 gem "devise"
 
-gem 'nokogiri', '~> 1.18', '>= 1.18.8'
+gem "ffi", "< 1.17.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

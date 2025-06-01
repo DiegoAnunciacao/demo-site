@@ -20,7 +20,8 @@ gem "tailwindcss-rails"
 gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
-
+#
+gem 'nokogiri', '1.18.8', platforms: [:ruby]
 # devise
 gem "devise"
 

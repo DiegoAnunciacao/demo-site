@@ -355,7 +355,6 @@ PLATFORMS
   arm-linux-musl
   arm64-darwin
   x86_64-darwin
-  x86_64-linux
   x86_64-linux-gnu
   x86_64-linux-musl
 
@@ -384,8 +383,5 @@ DEPENDENCIES
   tzinfo-data
   web-console
 
-RUBY VERSION
-   ruby 3.1.2p20
-
 BUNDLED WITH
-   2.6.8
+   2.6.9

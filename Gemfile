@@ -1,7 +1,6 @@
 source "https://rubygems.org"
 
 ruby '3.1.2'
-gem 'rubygems-update', '~> 3.3', '>= 3.3.22'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2", ">= 7.2.2.1"
@@ -26,6 +25,8 @@ gem "jbuilder"
 #
 # devise
 gem "devise"
+
+gem 'nokogiri', '~> 1.18', '>= 1.18.8'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
